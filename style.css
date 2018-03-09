@@ -1,0 +1,31 @@
+h1 {
+    text-align: center;
+    color:white;
+    font-family: "Arial", Times, serif;
+}
+
+table {
+    color: goldenrod;
+    background-color: dimgrey;
+    font-family: "Arial", Times, serif;
+    border-color: black;
+    border-radius: 5px;
+
+}
+
+p {
+    color: whitesmoke;
+    font: 1em sans-serif;
+}
+
+body {
+    background-color: grey;
+}
+
+img {
+    align-self: auto;
+}
+
+a {
+    font-family: "Arial", Times, serif;
+}
