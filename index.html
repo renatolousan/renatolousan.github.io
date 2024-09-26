@@ -3,37 +3,69 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>PW 2018/1 - Renato Lousan</title>
+    <title>Ideal Studio Monitor Speakers Angle Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <h1>Indíce de exercícios e trabalhos da disciplina Programação Web 2018/1</h1>
-    <p align="center">Autor: Renato Lousan da Silva - 21553693</p><br>
-    <table border="1" align="center">
-        <tr>
-            <td>
-                Exercício/Trabalho
-            </td>
+    <div class="container">
+        <h1>Ideal Studio Monitor Speakers Angle Calculator</h1>
+        <form id="angle-form">
+            <div class="input-group">
+                <label for="distance-to-monitors">Distance to Monitors (cm):</label>
+                <input type="number" id="distance-to-monitors" required min="0" step="any">
+            </div>
+            <div class="input-group">
+                <label for="distance-between-monitors">Distance Between Monitors (cm):</label>
+                <input type="number" id="distance-between-monitors" required min="0" step="any">
+            </div>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results" class="hidden">
+            <h2>Results:</h2>
+            <p>θₕ (Horizontal Angle): <span id="theta-h"></span> degrees</p>
+            <p>Recommended Monitor Angle: <span id="monitor-angle"></span> degrees</p>
+        </div>
+        <div id="error-message" class="error hidden"></div>
 
-            <td>
-                Link
-            </td>
-        </tr>
-        <td>Primeira página HTML5<img src="html5.png" width="24" height="24" alt="Simbolo do HTML5"/></td>
-        <td>
-            <button id="botao2" onclick="location.href='PrimeiraPagina.html';">Go</button>
-        </td>
-        <tr>
-            <td>Segunda página HTML5<img src="html5.png" width="24" height="24" alt="Simbolo do HTML5"/></td>
-            <td>
-                <button id="botao2" onclick="location.href='SegundaPagina.html';">Go</button>
-            </td>
-        </tr>
-    </table>
-
+        <!-- New Explanation Section -->
+        <div class="explanation-section">
+            <h2>How do I do it?</h2>
+            <img src="https://s1.gifyu.com/images/SAijr.gif" width="600" alt="output" border="0" />
+            <p>First, make sure the monitor speakers are at the same depth in your desk, this is easily done with a tape
+                measure or with a fancy laser level. Then, measure the distance between the monitors. Note that the
+                distance from the monitors are <strong> measured from tweeter to tweeter</strong>. Now, it is time to
+                measure your distance from the speakers. </p>
+            <p>
+                To measure your distance from the speakers is a bit trickier, because you have to set a reference within
+                the monitors front panel. In my tests, the <strong> farthest side of the front panel</strong> yielded
+                better results than from any other point, that is because they serve as a great pivot point to factor in
+                all elements from your studio monitors.
+            </p>
+            <p>
+                Now, initiate the measure from the above chosen point to your left/right ear. The number read at the
+                measured tape right next to your ear is the depth distance!
+            </p>
+            <img src="https://s1.gifyu.com/images/SAiFk.gif" width="600" alt="output2 ezgif.com optimize" border="0" />
+            <h2>Why is it important?</h2>
+            <img src="Untitled Diagram.png" alt="Description" width="600">
+            <p>In an ideal scenario, the monitors should be placed in a 60 degree angle to form a perfect triangle
+                (60+60+60 degree triangle). But not always the listener can be at a distance from the speakers where a
+                60 degree angle is optimal. In my case, I am at 70cm from my speakers (D) and the speakers are 93cm
+                apart from each other (W). So, to calculate my horizontal angle from the speakers, we use the horizontal
+                field of view formula as follows:</p>
+            <img src="formula1.png" alt="Description" width="600">
+            <p>And then, we plug in the values measured:</p>
+            <img src="formula2.png" alt="Description" width="600">
+            <p>Now, we calculate the complement angles of our triangle:</p>
+            <img src="formula3.png" alt="Description" width="600">
+            <p>Plugging in our example values:</p>
+            <img src="formula4.png" alt="Description" width="600">
+            <p>And that's it! Now you have your perfect triangle and you can enjoy your music with perfect centrality!
+            </p>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
